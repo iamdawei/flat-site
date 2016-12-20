@@ -753,6 +753,10 @@ label {
   border-radius: 1px;
   -webkit-border-radius: 1px;
   box-shadow: none;
+  -webkit-transition: border .25s linear, color .25s linear, background-color .25s linear;
+  -moz-transition: border .25s linear, color .25s linear, background-color .25s linear;
+  -o-transition: border .25s linear, color .25s linear, background-color .25s linear;
+  transition: border .25s linear, color .25s linear, background-color .25s linear;
 }
 .input-group .btn {
   margin: 0 !important;
@@ -780,9 +784,9 @@ label {
   color: #fff;
 }
 .form-control:focus {
-  border-color: #ccc;
+  border-color: #19b698;
   box-shadow: none;
-  background-color: #F4F5F7;
+  background-color: #fdfdfd;
 }
 select.form-control,
 textarea.form-control {
@@ -2740,6 +2744,10 @@ table.information > tbody > tr > td {
   margin-left: 3px;
   font-size: 13px;
   padding: 7px 11px;
+  -webkit-transition: border 0.25s linear, color 0.25s linear, background-color 0.25s linear;
+  -moz-transition: border 0.25s linear, color 0.25s linear, background-color 0.25s linear;
+  -o-transition: border 0.25s linear, color 0.25s linear, background-color 0.25s linear;
+  transition: border 0.25s linear, color 0.25s linear, background-color 0.25s linear;
 }
 .btn-default,
 .btn-default:focus {
@@ -3464,7 +3472,7 @@ fieldset[disabled] .btn-primary.active {
 }
 .external-event {
   /* try to mimick the look of a real event */
-  margin: 2px 0;
+  margin: 2px;
   padding: 2px 4px;
   -webkit-border-radius: 3px;
   border-radius: 3px;

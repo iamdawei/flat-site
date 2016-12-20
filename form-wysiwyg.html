@@ -22,11 +22,8 @@
 	  <script src="assets/js/respond.min.js"></script>
 	<![endif]-->
 	<link rel="stylesheet" type="text/css" href="js/jquery.nanoscroller/nanoscroller.css" />
-
-    <link rel="stylesheet" type="text/css" href="js/bootstrap.wysihtml5/src/bootstrap-wysihtml5.css"></link>
-  <link rel="stylesheet" type="text/css" href="js/bootstrap.summernote/dist/summernote.css" />  
-	<link href="css/style.css" rel="stylesheet" />	
-    
+  <link rel="stylesheet" href="js/bootstrap.summernote/dist/summernote.0.8.2.css">
+    <link href="css/style.css" rel="stylesheet" />
 </head>
 <body class="animated">
 
@@ -226,58 +223,6 @@
 			  <li class="active">WISYWIG Editor</li>
 			</ol>
 		</div>	
-    
-			<div class="row">
-				<div class="col-md-12">
-				
-					<div class="block-flat">
-						<div class="header">							
-							<h3>CKEditor</h3>
-						</div>
-						<div class="content">
-						    <form class="form-horizontal group-border-dashed" action="#"  novalidate>
-								<div class="form-group">
-									<textarea class="ckeditor form-control"></textarea>
-								</div>
-								<div class="form-group">
-									<div class="col-sm-12">
-									  <button type="submit" class="btn btn-primary">Submit</button>
-									  <button class="btn btn-default">Cancel</button>
-									</div>
-								</div>
-							</form>
-						</div>
-					</div>
-					
-				</div>
-			</div>
-			
-			<div class="row">
-				<div class="col-md-12">
-				
-					<div class="block-flat">
-						<div class="header">							
-							<h3>Inline Editor</h3>
-						</div>
-						<div class="content inline-editable" contenteditable="true" >
-							<h1>Heading Text 1</h1>
-							<h2>Heading Text 2</h2>
-							<h3>Heading Text 3</h3>
-							<h4>Heading Text 4</h4>
-							<h5>Heading Text 5</h5>
-							<h6>Heading Text 6</h6>
-							<div class="spacer">&nbsp;</div>
-							<h1 class="hthin">Thin Heading 1</h1>
-							<h2 class="hthin">Thin Heading 2</h2>
-							<h3 class="hthin">Thin Heading 3</h3>
-							<p class="spacer">
-								To use thin headings, set <code>".hthin"</code> class in heading tag.
-							</p>
-						</div>
-					</div>
-					
-				</div>
-			</div>
       
 			<div class="row">
 				<div class="col-md-12">
@@ -298,7 +243,7 @@
 				
 					<div class="block-flat">
 						<div class="header">							
-							<h3>Bootstrap Wysihtml5</h3>
+							<h3>Bootstrap summernote</h3>
 						</div>
 						<div class="content">
               <div id="summernote"></div>
@@ -475,26 +420,24 @@
         });
       });
     });
-  </script> 	<script src="js/ckeditor/ckeditor.js"></script>
-	<script src="js/ckeditor/adapters/jquery.js"></script>
-  <script type="text/javascript" src="js/bootstrap.summernote/dist/summernote.min.js"></script>
-  <script type="text/javascript" src="js/bootstrap.wysihtml5/lib/js/wysihtml5-0.3.0.js"></script>
-  <script type="text/javascript" src="js/bootstrap.wysihtml5/src/bootstrap-wysihtml5.js"></script>
-
-<script type="text/javascript">
-    $(document).ready(function(){
-      //initialize the javascript
-      $('textarea.ckeditor').ckeditor();
-      CKEDITOR.disableAutoInline = true;
-      $(".inline-editable").each(function(){
-        CKEDITOR.inline($(this)[0]);
-      });
-    
-      $('#some-textarea').wysihtml5();
-      $('#summernote').summernote();
-    });
-</script>
+  </script>
   
+  <!-- include summernote -->
+  
+  <script type="text/javascript" src="js/bootstrap.summernote/dist/summernote.min.0.8.2.js"></script>
+  <script type="text/javascript" src="js/bootstrap.summernote/lang/summernote-zh-CN.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('#summernote').summernote({
+        height: 200,
+        tabsize: 2,
+        lang: 'zh-CN'
+      });
+    });
+  </script>
+<style type="text/css">
+.note-editor .btn-sm{font-size: 14px;}
+</style>
   
 <script type="text/javascript" src="js/jquery.flot/jquery.flot.js"></script>
 <script type="text/javascript" src="js/jquery.flot/jquery.flot.pie.js"></script>
