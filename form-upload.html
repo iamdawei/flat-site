@@ -407,34 +407,35 @@
       });
     });
   </script>
-<script type="text/javascript" src="js/dropzone/dropzone.min.js?v=1"></script>
+<script type="text/javascript" src="js/dropzone/dropzone.js?v=11"></script>
 <script type="text/javascript">
-
-$("div#fileUpload").dropzone({
-	url: "/js/dropzone/upload.php",
-	maxFiles: 2,
-	maxFilesize: 2,
-	acceptedFiles: ".jpg,.gif,.png,.mp4,.mp3,.wav,.zip,.rar",
-	dictDefaultMessage:'将文件拖拽到此区域，或点击上传文件',
-	addRemoveLinks:true,
-	dictDefaultMessage: "你可以将文件拖拽到此，或点击浏览文件进行上传",
-	dictFallbackMessage: "您的浏览器不支持本上传插件",
-	dictFallbackText: "请使用 fallback 上传您的文件像过去",
-	dictFileTooBig: "文件({{filesize}}M)过大，最大: {{maxFilesize}}M",
-	dictInvalidFileType: "文件类型错误",
-	dictResponseError: "服务器响应错误码：{{statusCode}}",
-	dictCancelUpload: "取消上传",
-	dictCancelUploadConfirmation: "你确定取消该文件上传吗",
-	dictRemoveFile: "移除文件",
-	dictRemoveFileConfirmation: "你确定移除该文件吗",
-	dictMaxFilesExceeded: "上传文件数量超过上限",
-	init: function() {
-            this.on("success", function(file) {
-                //TODO 上传成功
-            });
-        }
+Dropzone.autoDiscover = false;//禁用发现页面所有元素，避免dropzone初始化Error错误，如果页面存在dropzone，则删除本属性。
+$(function(){
+	$("div#fileUpload").dropzone({
+		url: "js/dropzone/upload.php",
+		maxFiles: 2,
+		maxFilesize: 2,
+		acceptedFiles: ".jpg,.gif,.png,.mp4,.mp3,.wav,.zip,.rar",
+		dictDefaultMessage:'将文件拖拽到此区域，或点击上传文件',
+		addRemoveLinks:true,
+		dictDefaultMessage: "你可以将文件拖拽到此，或点击浏览文件进行上传",
+		dictFallbackMessage: "您的浏览器不支持本上传插件",
+		dictFallbackText: "请使用 fallback 上传您的文件像过去",
+		dictFileTooBig: "文件({{filesize}}M)过大，最大: {{maxFilesize}}M",
+		dictInvalidFileType: "文件类型错误",
+		dictResponseError: "服务器响应错误码：{{statusCode}}",
+		dictCancelUpload: "取消上传",
+		dictCancelUploadConfirmation: "你确定取消该文件上传吗",
+		dictRemoveFile: "移除文件",
+		dictRemoveFileConfirmation: "你确定移除该文件吗",
+		dictMaxFilesExceeded: "上传文件数量超过上限",
+		init: function() {
+				this.on("success", function(file, json) {
+					//TODO 上传成功
+				});
+			}
+	});
 });
-
 
 </script>
 <script type="text/javascript" src="js/jquery.flot/jquery.flot.js"></script>
