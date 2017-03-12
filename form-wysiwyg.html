@@ -22,7 +22,7 @@
 	  <script src="assets/js/respond.min.js"></script>
 	<![endif]-->
 	<link rel="stylesheet" type="text/css" href="js/jquery.nanoscroller/nanoscroller.css" />
-  <link rel="stylesheet" href="js/bootstrap.summernote/dist/summernote.0.8.2.css">
+	<link rel="stylesheet" href="js/bootstrap.summernote/dist/summernote.0.8.2.css">
     <link href="css/style.css" rel="stylesheet" />
 </head>
 <body class="animated">
@@ -223,20 +223,6 @@
 			  <li class="active">WISYWIG Editor</li>
 			</ol>
 		</div>	
-      
-			<div class="row">
-				<div class="col-md-12">
-				
-					<div class="block-flat">
-						<div class="header">							
-							<h3>Bootstrap Wysihtml5</h3>
-						</div>
-						<div class="content">
-              <textarea style="height:150px;" class="form-control" id="some-textarea"></textarea>
-            </div>
-					</div>
-				</div>
-			</div>
 			
 			<div class="row">
 				<div class="col-md-12">
@@ -435,8 +421,14 @@
       });
     });
   </script>
+  <!-- summernote 编辑器样式冲突 -->
 <style type="text/css">
-.note-editor .btn-sm{font-size: 14px;}
+.note-editor .btn-sm i{font-size:12px}
+.note-editor .dropdown-menu > li > a:hover{background:#f5f5f5;color:#333;}
+.note-editor .dropdown-menu{margin-top:0px;border: 1px solid rgba(0, 0, 0, .15);}
+.note-editor .dropdown-menu pre{margin:0 0 10px;}
+.note-editor .dropdown-menu h1,.note-editor .dropdown-menu h2,.note-editor .dropdown-menu h3,
+.note-editor .dropdown-menu h4,.note-editor .dropdown-menu h5,.note-editor .dropdown-menu h6{line-height: 1.1;}
 </style>
   
 <script type="text/javascript" src="js/jquery.flot/jquery.flot.js"></script>
