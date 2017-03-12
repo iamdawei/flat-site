@@ -3,5 +3,5 @@
 // of $_FILES.
 
 //TODO 上传功能
-
+echo 111;
 ?>

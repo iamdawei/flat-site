@@ -23,7 +23,11 @@
 	<![endif]-->
 	<link rel="stylesheet" type="text/css" href="js/jquery.nanoscroller/nanoscroller.css" />
 
-  <link rel="stylesheet" type="text/css" href="js/dropzone/css/dropzone.css" />  
+  <link rel="stylesheet" type="text/css" href="js/dropzone/css/dropzone.css" />
+  <!-- 重写错误样式，避免覆盖 -->
+  <style type="text/css">
+.dropzone .dz-preview .dz-error-message{top:150px;}
+  </style>
 	<link href="css/style.css" rel="stylesheet" />	
     
 </head>
@@ -228,12 +232,10 @@
 		<div class="alert alert-info alert-white rounded">
 		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 		<div class="icon"><i class="fa fa-info-circle"></i></div>
-		<strong>注意！</strong>本功能需要配合后台上传代码
+		<strong>注意！</strong>本功能需要配合后台上传代码<br/><br/>支持的文件格式为：.jpg , .gif , .png , .mp4 , .mp3 , .wav , .zip , .rar
 		</div>
 
-<form action="js/dropzone/upload.php"
-class="dropzone"
-id="my-awesome-dropzone"></form>
+<div id="fileUpload" class="dropzone"></div>
 	</div>
 	
 	</div> 
@@ -404,9 +406,37 @@ id="my-awesome-dropzone"></form>
         });
       });
     });
-  </script> <script type="text/javascript" src="js/dropzone/dropzone.js"></script>
-  
-  
+  </script>
+<script type="text/javascript" src="js/dropzone/dropzone.min.js?v=1"></script>
+<script type="text/javascript">
+
+$("div#fileUpload").dropzone({
+	url: "/js/dropzone/upload.php",
+	maxFiles: 2,
+	maxFilesize: 2,
+	acceptedFiles: ".jpg,.gif,.png,.mp4,.mp3,.wav,.zip,.rar",
+	dictDefaultMessage:'将文件拖拽到此区域，或点击上传文件',
+	addRemoveLinks:true,
+	dictDefaultMessage: "你可以将文件拖拽到此，或点击浏览文件进行上传",
+	dictFallbackMessage: "您的浏览器不支持本上传插件",
+	dictFallbackText: "请使用 fallback 上传您的文件像过去",
+	dictFileTooBig: "文件({{filesize}}M)过大，最大: {{maxFilesize}}M",
+	dictInvalidFileType: "文件类型错误",
+	dictResponseError: "服务器响应错误码：{{statusCode}}",
+	dictCancelUpload: "取消上传",
+	dictCancelUploadConfirmation: "你确定取消该文件上传吗",
+	dictRemoveFile: "移除文件",
+	dictRemoveFileConfirmation: "你确定移除该文件吗",
+	dictMaxFilesExceeded: "上传文件数量超过上限",
+	init: function() {
+            this.on("success", function(file) {
+                //TODO 上传成功
+            });
+        }
+});
+
+
+</script>
 <script type="text/javascript" src="js/jquery.flot/jquery.flot.js"></script>
 <script type="text/javascript" src="js/jquery.flot/jquery.flot.pie.js"></script>
 <script type="text/javascript" src="js/jquery.flot/jquery.flot.resize.js"></script>
