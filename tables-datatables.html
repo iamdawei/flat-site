@@ -1688,8 +1688,9 @@
     });
   </script> <script type="text/javascript" src="js/jquery.ui/jquery-ui.js"></script>
 <script type="text/javascript" src="js/jquery.jeditable/jquery.jeditable.mini.js"></script>
-<script type="text/javascript" src="js/jquery.datatables/jquery.datatables.min.js"></script>
+<script src="//cdn.bootcss.com/datatables/1.10.13/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="js/jquery.datatables/bootstrap-adapter/js/datatables.js"></script>
+
 <script type="text/javascript">
       //Add dataTable Functions
       var functions = $('<div class="btn-group"><button class="btn btn-default btn-xs" type="button">Actions</button><button data-toggle="dropdown" class="btn btn-xs btn-primary dropdown-toggle" type="button"><span class="caret"></span><span class="sr-only">Toggle Dropdown</span></button><ul role="menu" class="dropdown-menu"><li><a href="#">Edit</a></li><li><a href="#">Copy</a></li><li><a href="#">Details</a></li><li class="divider"></li><li><a href="#">Remove</a></li></ul></div>');
@@ -1703,9 +1704,6 @@
       //Basic Instance
       $("#datatable").dataTable();
       
-      //Search input style
-      $('.dataTables_filter input').addClass('form-control').attr('placeholder','Search');
-      $('.dataTables_length select').addClass('form-control');    
           
        /* Formating function for row details */
         function fnFormatDetails ( oTable, nTr )
@@ -1766,8 +1764,7 @@
             }
         } );
         
-      $('.dataTables_filter input').addClass('form-control').attr('placeholder','Search');
-      $('.dataTables_length select').addClass('form-control');    
+ 
       /* Init DataTables */
       var oTable = $('#datatable3').dataTable();
        
@@ -1783,8 +1780,12 @@
                   "column": oTable.fnGetPosition( this )[2]
               };
           },
-          "height": "14px",
+          "height": "24px",
+		  "width":"100%"
       });
+
+	  $('.dataTables_filter input').addClass('form-control').attr('placeholder','搜索');
+      $('.dataTables_length select').addClass('form-control'); 
     });
 </script>
   

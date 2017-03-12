@@ -2,10 +2,30 @@
 $.extend( true, $.fn.dataTable.defaults, {
 	"sDom": "<'row'<'col-sm-12'<'pull-right'f><'pull-left'l>r<'clearfix'>>>t<'row'<'col-sm-12'<'pull-left'i><'pull-right'p><'clearfix'>>>",
     "sPaginationType": "bs_normal",
-    "oLanguage": {
-        "sLengthMenu": "Show _MENU_ Rows",
-        "sSearch": ""
-    }
+    "language": {
+				"decimal":        "-",
+				"emptyTable":     "没有数据",
+				"info":           "显示第 _START_ 至 _END_ 项结果，共 _TOTAL_ 项",
+				"infoEmpty":      "显示第 0 至 0 项结果，共 0 项",
+				"infoFiltered":   "(由 _MAX_ 项结果过滤)",
+				"infoPostFix":    "",
+				"thousands":      ",",
+				"lengthMenu":     "显示 _MENU_ 项结果",
+				"loadingRecords": "搜索中...",
+				"processing":     "处理中...",
+				"search":         "",
+				"zeroRecords":    "没有找到匹配的数据",
+				"paginate": {
+					"first":      "首项",
+					"last":       "末页",
+					"next":       "下页",
+					"previous":   "上页"
+				},
+				"aria": {
+					"sortAscending":  ": 以升序排列此列",
+					"sortDescending": ": 以降序排列此列"
+				}
+			}
 } );
 
 /* Default class modification */
